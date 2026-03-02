@@ -45,6 +45,19 @@ export {
   computeMonthlyCosts,
 } from './cost-calculator.js';
 
+// Filter Engine
+export {
+  loadFilterConfig,
+  saveFilterConfig,
+  loadOutputStats,
+  findMatchingRule,
+  applyFilter,
+  recordOutput,
+  autoGenerateRules,
+  updateRuleStats,
+} from './filter-engine.js';
+export type { FilterRule, OutputStat, FilterConfig } from './filter-engine.js';
+
 // Types
 export type {
   TokenUsage,

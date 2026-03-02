@@ -7,6 +7,7 @@ import { learnCommand } from './commands/learn.js';
 import { mistakesCommand } from './commands/mistakes.js';
 import { optimizeCommand } from './commands/optimize.js';
 import { dashboardCommand } from './commands/dashboard.js';
+import { filtersCommand } from './commands/filters.js';
 
 const program = new Command();
 
@@ -58,6 +59,14 @@ program
   .description('Overview of all projects and sessions')
   .action(async () => {
     await dashboardCommand();
+  });
+
+program
+  .command('filters')
+  .description('Show and manage output filter rules')
+  .option('--auto-update', 'auto-generate new rules from tracked data')
+  .action(async (options: { autoUpdate?: boolean }) => {
+    await filtersCommand(options);
   });
 
 program.parse();
