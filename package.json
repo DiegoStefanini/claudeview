@@ -1,0 +1,19 @@
+{
+  "name": "claudeview",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Context Profiler + Learning System for Claude Code",
+  "workspaces": [
+    "packages/core",
+    "packages/cli",
+    "packages/mcp"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "clean": "rm -rf packages/*/dist"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
